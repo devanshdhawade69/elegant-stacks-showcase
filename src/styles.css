@@ -41,9 +41,9 @@
   --background: oklch(0.27 0.07 255);
   /* Floral White */
   --foreground: oklch(0.985 0.012 90);
-  /* Pale Brown card */
-  --card: oklch(0.68 0.08 65);
-  --card-foreground: oklch(0.985 0.012 90);
+  /* Floral White card */
+  --card: oklch(0.985 0.012 90);
+  --card-foreground: oklch(0.27 0.07 255);
   --popover: oklch(0.27 0.07 255);
   --popover-foreground: oklch(0.985 0.012 90);
   /* Powder Blue */
