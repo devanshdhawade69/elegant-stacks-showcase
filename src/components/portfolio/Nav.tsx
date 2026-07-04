@@ -12,7 +12,7 @@ export function Nav() {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
       <nav className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
         <Link to="/" className="font-display text-lg font-semibold tracking-tight">
-          alex<span className="text-primary">.dev</span>
+          dev<span className="text-primary">.d</span>
         </Link>
         <ul className="hidden md:flex items-center gap-8 text-sm">
           {links.map((l) => (
