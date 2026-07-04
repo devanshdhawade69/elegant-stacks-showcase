@@ -13,7 +13,7 @@ export function Hero() {
         }}
       />
       <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-32 md:pt-36 md:pb-44 grid md:grid-cols-[1fr_auto] gap-12 items-center">
-        <div>
+        <div className="animate-fade-in">
           <p className="text-sm uppercase tracking-[0.25em] text-foreground/60 mb-6">
             Full-Stack Web Developer · Available for work
           </p>
@@ -42,10 +42,12 @@ export function Hero() {
             </a>
           </div>
         </div>
-        <div className="relative justify-self-center md:justify-self-end">
+        <div
+          className="relative justify-self-center md:justify-self-end opacity-0 animate-[hero-portrait_0.9s_ease-out_0.2s_forwards]"
+        >
           <div
             aria-hidden
-            className="absolute inset-0 -m-6 rounded-full blur-3xl opacity-40"
+            className="absolute inset-0 -m-6 rounded-full blur-3xl opacity-40 animate-[hero-glow_0.9s_ease-out_0.4s_both]"
             style={{
               background:
                 "radial-gradient(circle, oklch(0.86 0.06 245 / 0.6), transparent 70%)",
