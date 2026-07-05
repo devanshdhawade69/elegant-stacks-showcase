@@ -37,29 +37,29 @@
 
 :root {
   --radius: 0.875rem;
-  /* Deep Blue */
-  --background: oklch(0.27 0.07 255);
-  /* Floral White */
-  --foreground: oklch(0.985 0.012 90);
-  /* Floral White card */
-  --card: oklch(0.985 0.012 90);
-  --card-foreground: oklch(0.27 0.07 255);
-  --popover: oklch(0.27 0.07 255);
-  --popover-foreground: oklch(0.985 0.012 90);
-  /* Powder Blue */
-  --primary: oklch(0.86 0.06 245);
-  --primary-foreground: oklch(0.27 0.07 255);
-  --secondary: oklch(0.32 0.07 255);
-  --secondary-foreground: oklch(0.985 0.012 90);
-  --muted: oklch(0.32 0.06 255);
-  --muted-foreground: oklch(0.86 0.02 90);
-  --accent: oklch(0.86 0.06 245);
-  --accent-foreground: oklch(0.27 0.07 255);
+  /* Blue Grey #7298C7 */
+  --background: oklch(0.65 0.09 255);
+  /* Morning Butter #F3D98F */
+  --foreground: oklch(0.90 0.10 92);
+  /* Morning Butter card */
+  --card: oklch(0.90 0.10 92);
+  --card-foreground: oklch(0.55 0.10 255);
+  --popover: oklch(0.65 0.09 255);
+  --popover-foreground: oklch(0.90 0.10 92);
+  /* Morning Butter primary */
+  --primary: oklch(0.90 0.10 92);
+  --primary-foreground: oklch(0.55 0.10 255);
+  --secondary: oklch(0.70 0.08 255);
+  --secondary-foreground: oklch(0.90 0.10 92);
+  --muted: oklch(0.70 0.08 255);
+  --muted-foreground: oklch(0.90 0.07 92);
+  --accent: oklch(0.90 0.10 92);
+  --accent-foreground: oklch(0.55 0.10 255);
   --destructive: oklch(0.6 0.22 27);
-  --destructive-foreground: oklch(0.985 0.012 90);
-  --border: oklch(0.985 0.012 90 / 0.14);
-  --input: oklch(0.985 0.012 90 / 0.18);
-  --ring: oklch(0.86 0.06 245);
+  --destructive-foreground: oklch(0.90 0.10 92);
+  --border: oklch(0.90 0.10 92 / 0.20);
+  --input: oklch(0.90 0.10 92 / 0.24);
+  --ring: oklch(0.90 0.10 92);
 }
 
 .dark {
