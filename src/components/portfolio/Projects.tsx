@@ -97,13 +97,13 @@ function Card({ project }: { project: Project }) {
 
 export function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-      <div className="flex items-end justify-between flex-wrap gap-6 mb-12">
-        <div>
+    <section id="projects" className="mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-32">
+      <div className="flex items-end justify-between flex-wrap gap-6 mb-10 md:mb-12">
+        <div className="min-w-0">
           <p className="text-sm uppercase tracking-[0.25em] text-foreground/60 mb-3">
             Selected work
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold max-w-xl">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold max-w-xl">
             Projects shipped end-to-end.
           </h2>
         </div>
@@ -111,11 +111,12 @@ export function Projects() {
           A few recent products — the brief, the stack, and the measurable outcome.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 md:auto-rows-fr gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:auto-rows-fr gap-4 sm:gap-5">
         {projects.map((p) => (
           <Card key={p.name} project={p} />
         ))}
       </div>
+
     </section>
   );
 }

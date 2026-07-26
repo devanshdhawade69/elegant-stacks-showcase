@@ -20,16 +20,17 @@ const groups = [
 
 export function Skills() {
   return (
-    <section id="skills" className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-      <div className="mb-14">
+    <section id="skills" className="mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-32">
+      <div className="mb-10 md:mb-14">
         <p className="text-sm uppercase tracking-[0.25em] text-foreground/60 mb-3">
           Tools & Skills
         </p>
-        <h2 className="font-display text-4xl md:text-5xl font-semibold max-w-xl">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold max-w-xl">
           The stack I reach for.
         </h2>
       </div>
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+
         {groups.map(({ icon: Icon, title, skills }) => (
           <div
             key={title}
