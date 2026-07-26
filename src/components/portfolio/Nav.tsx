@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -9,24 +9,36 @@ const links = [
 
 export function Nav() {
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
-      <nav className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="font-display text-lg font-semibold tracking-tight">
-          dev<span className="text-primary">.d</span>
-        </Link>
-        <ul className="hidden md:flex items-center gap-8 text-sm">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="text-foreground/80 hover:text-foreground transition-colors">
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <a href="#contact" className="md:hidden text-sm text-primary font-medium">
-          Contact
-        </a>
-      </nav>
+    <header className="fixed inset-x-0 top-0 z-50 px-3 sm:px-4 pt-3 sm:pt-4">
+      <div className="mx-auto max-w-7xl rounded-full border border-border bg-background/70 backdrop-blur-md shadow-sm">
+        <nav className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 sm:px-6 py-2.5 sm:py-3 lg:flex lg:justify-between">
+          <a
+            href="#home"
+            className="font-display text-lg md:text-xl font-semibold tracking-tight text-foreground truncate"
+          >
+            dev<span className="text-primary">.d</span>
+          </a>
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8 text-xs uppercase tracking-[0.25em] text-foreground/80">
+            {links.map((l, i) => (
+              <span key={l.href} className="flex items-center gap-6 xl:gap-8">
+                {i > 0 && <span className="text-foreground/30">/</span>}
+                <a href={l.href} className="hover:text-foreground transition-colors">
+                  {l.label}
+                </a>
+              </span>
+            ))}
+          </div>
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+            <ThemeToggle />
+            <a
+              href="#contact"
+              className="rounded-full bg-primary text-primary-foreground px-3 sm:px-4 md:px-5 py-2 text-[10px] sm:text-xs uppercase tracking-[0.2em] font-medium hover:opacity-90 transition-opacity whitespace-nowrap"
+            >
+              Book a call
+            </a>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 }

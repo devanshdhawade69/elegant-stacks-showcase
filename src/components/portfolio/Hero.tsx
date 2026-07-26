@@ -1,46 +1,9 @@
 import portrait from "@/assets/alex-portrait.png.asset.json";
-import { ThemeToggle } from "./ThemeToggle";
-
-const links = [
-  { label: "Home", href: "#home" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
-];
 
 export function Hero() {
   return (
-    <section id="home" className="px-3 sm:px-4 pt-3 sm:pt-4 pb-16 md:pb-24">
+    <section id="home" className="px-3 sm:px-4 pt-20 sm:pt-24 pb-16 md:pb-24">
       <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-secondary/60 border border-border">
-        {/* Top nav strip inside hero */}
-        <div className="absolute inset-x-0 top-0 z-20 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 sm:px-6 md:px-10 py-4 md:py-5 lg:flex lg:justify-between">
-          <a
-            href="#home"
-            className="font-display text-lg md:text-xl font-semibold tracking-tight text-foreground truncate"
-          >
-            dev<span className="text-primary">.d</span>
-          </a>
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-xs uppercase tracking-[0.25em] text-foreground/80">
-            {links.map((l, i) => (
-              <span key={l.href} className="flex items-center gap-6 xl:gap-8">
-                {i > 0 && <span className="text-foreground/30">/</span>}
-                <a href={l.href} className="hover:text-foreground transition-colors">
-                  {l.label}
-                </a>
-              </span>
-            ))}
-          </nav>
-          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-            <ThemeToggle />
-            <a
-              href="#contact"
-              className="rounded-full bg-primary text-primary-foreground px-3 sm:px-4 md:px-5 py-2 text-[10px] sm:text-xs uppercase tracking-[0.2em] font-medium hover:opacity-90 transition-opacity whitespace-nowrap"
-            >
-              Book a call
-            </a>
-          </div>
-        </div>
-
         {/* Background glow */}
         <div
           aria-hidden
