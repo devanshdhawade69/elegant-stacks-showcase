@@ -7,21 +7,23 @@ import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
+import { StarsBackground } from "@/components/stars";
+import { MouseTrail } from "@/components/mouseTrail";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Alex Moreau — Full-Stack Web Developer" },
+      { title: "DEVANSH DHAWADE — Full-Stack Web Developer" },
       {
         name: "description",
         content:
-          "Portfolio of Alex Moreau, a full-stack web developer crafting elegant end-to-end web products with React, Node, and Postgres.",
+          "Portfolio of DEVANSH DHAWADE, a full-stack web developer crafting elegant end-to-end web products with React, Node, and Postgres.",
       },
-      { property: "og:title", content: "Alex Moreau — Full-Stack Web Developer" },
+      { property: "og:title", content: "DEVANSH DHAWADE — Full-Stack Web Developer" },
       {
         property: "og:description",
         content:
-          "Selected projects, stack, and contact for Alex Moreau — full-stack web developer.",
+          "Selected projects, stack, and contact for DEVANSH DHAWADE — full-stack web developer.",
       },
     ],
   }),
@@ -30,7 +32,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <StarsBackground className="min-h-screen text-foreground">
       <Nav />
       <main>
         <Hero />
@@ -40,6 +42,11 @@ function Index() {
       </main>
       <Footer />
       <Toaster />
-    </div>
+      <MouseTrail dotColor="white"
+      dotSize={7}
+      spacing={10}
+      trailLength={20}
+      fadeDuration={500} />
+    </StarsBackground>
   );
 }

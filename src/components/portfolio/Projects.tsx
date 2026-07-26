@@ -2,6 +2,7 @@ import analytics from "@/assets/project-analytics.jpg";
 import ecommerce from "@/assets/project-ecommerce.jpg";
 import chat from "@/assets/project-chat.jpg";
 import devtool from "@/assets/project-devtool.jpg";
+import AnimatedText from "../animatedText";
 
 type Project = {
   name: string;
@@ -66,7 +67,7 @@ function Card({ project }: { project: Project }) {
           width={1280}
           height={800}
           loading="lazy"
-          className="w-full h-48 md:h-56 object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+          className="w-full h-48 md:h-56 2xl:h-80 object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
         />
       </div>
       <div className="mt-5 flex flex-col gap-4 flex-1">
@@ -97,21 +98,19 @@ function Card({ project }: { project: Project }) {
 
 export function Projects() {
   return (
-    <section id="projects" className="mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-32">
-      <div className="flex items-end justify-between flex-wrap gap-6 mb-10 md:mb-12">
+    <section id="projects" className="mx-auto max-w-7xl px-4 sm:px-6 py-20 md:py-32 2xl:py-48">
+      <div className="flex items-end justify-between flex-wrap gap-6 mb-10 md:mb-12 2xl:mb-20">
         <div className="min-w-0">
-          <p className="text-sm uppercase tracking-[0.25em] text-foreground/60 mb-3">
+          <p className="text-sm 2xl:text-base uppercase tracking-[0.25em] text-foreground/60 mb-3 2xl:mb-5">
             Selected work
           </p>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold max-w-xl">
-            Projects shipped end-to-end.
-          </h2>
+          <AnimatedText text="Projects shipped end-to-end." className="font-display text-3xl sm:text-4xl md:text-5xl 2xl:text-7xl font-semibold max-w-xl 2xl:max-w-3xl" animationType="letters" staggerDelay={0.08} duration={0.6}/>
         </div>
-        <p className="text-foreground/70 max-w-sm">
+        <p className="text-foreground/70 max-w-sm 2xl:max-w-xl 2xl:text-lg">
           A few recent products — the brief, the stack, and the measurable outcome.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:auto-rows-fr gap-4 sm:gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:auto-rows-fr gap-4 sm:gap-5 2xl:gap-10">
         {projects.map((p) => (
           <Card key={p.name} project={p} />
         ))}
