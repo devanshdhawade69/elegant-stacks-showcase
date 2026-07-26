@@ -44,19 +44,20 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="mx-auto max-w-4xl px-6 py-24 md:py-32">
-      <div className="text-center mb-12">
+    <section id="contact" className="mx-auto max-w-4xl px-4 sm:px-6 py-20 md:py-32">
+      <div className="text-center mb-10 md:mb-12">
         <p className="text-sm uppercase tracking-[0.25em] text-foreground/60 mb-3">
           Contact
         </p>
-        <h2 className="font-display text-4xl md:text-5xl font-semibold">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold">
           Let's build something good.
         </h2>
       </div>
       <form
         onSubmit={handleSubmit}
-        className="rounded-3xl bg-card text-card-foreground p-8 md:p-10 space-y-6"
+        className="rounded-3xl bg-card text-card-foreground p-6 sm:p-8 md:p-10 space-y-6"
       >
+
         <div className="grid md:grid-cols-2 gap-6">
           <Field label="Name" name="name" placeholder="Jane Doe" />
           <Field label="Email" name="email" type="email" placeholder="jane@studio.com" />
