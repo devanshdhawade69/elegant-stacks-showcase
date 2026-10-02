@@ -3,17 +3,7 @@ import { toast } from "sonner";
 import { Send } from "lucide-react";
 import AnimatedText from "../animatedText";
 
-function Field({
-  label,
-  name,
-  type = "text",
-  placeholder,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  placeholder?: string;
-}) {
+function Field({ label, name, type = "text", placeholder, }: { label: string; name: string; type?: string; placeholder?: string; }) {
   return (
     <div>
       <label className="block text-xs uppercase tracking-wider text-card-foreground/70 mb-2">

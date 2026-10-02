@@ -1,21 +1,12 @@
 // import portrait from "@/assets/alex-portrait.png.asset.json";
 import HeroImg from "@/assets/heropg.png"
 import AnimatedText from "../animatedText";
+import { FloatingPathsBackground } from "@/components/floating-paths";
 
 export function Hero() {
   return (
     <section id="home" className="px-3 sm:px-4 pt-20 sm:pt-24 pb-16 md:pb-24 2xl:pt-32">
-      <div className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-secondary/60 border border-border">
-        {/* Background glow */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-80 animate-[hero-glow_1s_ease-out_0.3s_both]"
-          style={{
-            background:
-              "radial-gradient(65% 55% at 50% 45%, oklch(0.86 0.06 245 / 0.35), transparent 70%)",
-          }}
-        />
-
+      <FloatingPathsBackground position={1} className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-secondary/60 border border-border">
         {/* Portrait */}
         <div className="relative flex items-end justify-center min-h-[340px] sm:min-h-[460px] md:min-h-[600px] 2xl:min-h-[720px] opacity-0 animate-[hero-portrait_0.9s_ease-out_0.2s_forwards]">
           <img
@@ -39,7 +30,7 @@ export function Hero() {
             </div>
           </div>
         </div>
-      </div>
+      </FloatingPathsBackground>
     </section>
   );
 }

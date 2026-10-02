@@ -4,95 +4,136 @@ import chat from "@/assets/project-chat.jpg";
 import devtool from "@/assets/project-devtool.jpg";
 import AnimatedText from "../animatedText";
 
+import {
+  OrganicCard,
+  OrganicCardBand,
+  OrganicCardBody,
+  OrganicCardDescription,
+  OrganicCardEyebrow,
+  OrganicCardFooter,
+  OrganicCardFooterIcon,
+  OrganicCardFooterLabel,
+  OrganicCardImage,
+  OrganicCardTitle,
+} from "@/components/ui/organic-card";
+
 type Project = {
   name: string;
   image: string;
   problem: string;
   stack: string[];
   impact: string;
-  span?: string;
+  color: string;
+  category: string;
 };
 
 const projects: Project[] = [
   {
     name: "Lumen Analytics",
+    category: "SaaS Dashboard",
     image: analytics,
     problem: "SaaS teams drowning in disconnected dashboards with no single source of truth.",
     stack: ["Next.js", "tRPC", "Postgres", "ClickHouse"],
     impact: "Cut reporting time by 74% across 40+ customer accounts in the first quarter.",
-    span: "md:col-span-2 md:row-span-2",
+    color: "#f0eee9",
   },
   {
     name: "Marée Storefront",
+    category: "E-commerce",
     image: ecommerce,
     problem: "Boutique merchants needed a fast, themable storefront without Shopify lock-in.",
     stack: ["Remix", "Stripe", "Sanity"],
     impact: "Lifted conversion 3.2× and shipped 12 brand sites on the same engine.",
-    span: "md:col-span-2",
+    color: "#e8f2ec",
   },
   {
     name: "Salon Realtime",
+    category: "Realtime Infrastructure",
     image: chat,
     problem: "Distributed agencies needed durable group chat with searchable history.",
     stack: ["Node", "Fastify", "Redis", "Postgres"],
     impact: "Sustains 12k concurrent sockets per region with p99 < 80ms.",
+    color: "#ece8f2",
   },
   {
     name: "Forge CLI",
+    category: "Developer Tooling",
     image: devtool,
     problem: "Internal teams kept rewriting the same scaffolding scripts every quarter.",
     stack: ["TypeScript", "Bun", "Turbo"],
     impact: "Adopted by 9 squads — onboarding a new repo dropped from 2 days to 20 minutes.",
+    color: "#f2e8e8",
+  },
+  {
+    name: "Echo Forms",
+    category: "Edge Computing",
+    image: analytics,
+    problem: "Marketing teams struggled to embed dynamic, high-converting forms on edge networks.",
+    stack: ["React", "Tailwind", "Cloudflare Workers"],
+    impact: "Increased form completion rates by 42% across 2.5M monthly visits.",
+    color: "#e8ecf2",
+  },
+  {
+    name: "Nexus Flow",
+    category: "Workflow Automation",
+    image: chat,
+    problem: "Support ops lacked a visual builder for triaging complex multi-stage tickets.",
+    stack: ["Vue", "Node.js", "MongoDB", "RabbitMQ"],
+    impact: "Reduced manual ticket routing by 85% and saved ops team 40 hours weekly.",
+    color: "#f2efe8",
   },
 ];
 
-function Row({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <p className="text-xs uppercase tracking-wider text-card-foreground/65 mb-1">{label}</p>
-      <p className="text-card-foreground/95">{value}</p>
-    </div>
-  );
-}
-
 function Card({ project }: { project: Project }) {
   return (
-    <article
-      className={`group relative flex flex-col overflow-hidden rounded-3xl bg-card text-card-foreground p-5 transition-transform duration-300 hover:-translate-y-1 ${project.span ?? ""}`}
-    >
-      <div className="overflow-hidden rounded-2xl bg-background/30">
-        <img
-          src={project.image}
-          alt={`${project.name} screenshot`}
-          width={1280}
-          height={800}
-          loading="lazy"
-          className="w-full h-48 md:h-56 2xl:h-80 object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
-        />
-      </div>
-      <div className="mt-5 flex flex-col gap-4 flex-1">
-        <h3 className="font-display text-2xl font-semibold">{project.name}</h3>
-        <div className="space-y-3 text-sm leading-relaxed">
-          <Row label="Problem" value={project.problem} />
-          <div>
-            <p className="text-xs uppercase tracking-wider text-card-foreground/65 mb-2">
-              Tech Stack
-            </p>
-            <div className="flex flex-wrap gap-1.5">
-              {project.stack.map((t) => (
-                <span
-                  key={t}
-                  className="text-xs px-2.5 py-1 rounded-full bg-background/25 text-card-foreground"
-                >
-                  {t}
-                </span>
-              ))}
+    <OrganicCard backgroundColor={project.color} href="#">
+      <OrganicCardBody>
+        <div>
+          <OrganicCardImage
+            alt={`${project.name} screenshot`}
+            className="mb-5 h-[240px] animate-none opacity-100 sm:h-[300px]"
+            src={project.image}
+          />
+          <OrganicCardEyebrow className="animate-none opacity-100">
+            {project.category}
+          </OrganicCardEyebrow>
+          <OrganicCardTitle className="animate-none opacity-100 text-black">
+            {project.name}
+          </OrganicCardTitle>
+          <OrganicCardDescription className="w-11/12 animate-none opacity-100">
+            <div className="space-y-4 mt-2">
+              <div>
+                <span className="font-semibold text-black block mb-1">Problem: </span>
+                {project.problem}
+              </div>
+              <div>
+                <span className="font-semibold text-black block mb-1">Impact: </span>
+                {project.impact}
+              </div>
+              <div className="flex flex-wrap gap-1.5 pt-2">
+                {project.stack.map((t) => (
+                  <span
+                    key={t}
+                    className="text-xs px-2.5 py-1 rounded-full bg-black/10 text-black font-medium tracking-wide"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-          <Row label="My Impact" value={project.impact} />
+          </OrganicCardDescription>
         </div>
-      </div>
-    </article>
+      </OrganicCardBody>
+
+      <OrganicCardBand />
+
+      <OrganicCardFooter>
+        <OrganicCardFooterLabel className="animate-none opacity-100">
+          View Case Study
+        </OrganicCardFooterLabel>
+        <OrganicCardFooterIcon className="animate-none opacity-100" />
+      </OrganicCardFooter>
+    </OrganicCard>
   );
 }
 
@@ -110,12 +151,11 @@ export function Projects() {
           A few recent products — the brief, the stack, and the measurable outcome.
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 md:auto-rows-fr gap-4 sm:gap-5 2xl:gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         {projects.map((p) => (
           <Card key={p.name} project={p} />
         ))}
       </div>
-
     </section>
   );
 }

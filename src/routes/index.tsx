@@ -3,17 +3,17 @@ import { Toaster } from "@/components/ui/sonner";
 
 import { Nav } from "@/components/portfolio/Nav";
 import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/about";
 import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
-import { StarsBackground } from "@/components/stars";
 import { MouseTrail } from "@/components/mouseTrail";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DEVANSH DHAWADE — Full-Stack Web Developer" },
+      { title: "dev.d" },
       {
         name: "description",
         content:
@@ -32,10 +32,11 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <StarsBackground className="min-h-screen text-foreground">
+    <div className="min-h-screen text-foreground bg-background">
       <Nav />
       <main>
         <Hero />
+        <About />
         <Projects />
         <Skills />
         <Contact />
@@ -47,6 +48,6 @@ function Index() {
       spacing={10}
       trailLength={20}
       fadeDuration={500} />
-    </StarsBackground>
+    </div>
   );
 }
