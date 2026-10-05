@@ -42,7 +42,7 @@ export function DockCard({
   className?: string;
   mouseX?: any;
   id?: string;
-} & React.HTMLAttributes<HTMLDivElement>) {
+} & React.ComponentProps<typeof motion.div>) {
   const ref = useRef<HTMLDivElement>(null);
 
   const distanceCalc = useTransform(mouseX ?? useMotionValue(Infinity), (val: number) => {
