@@ -1,36 +1,94 @@
-// import portrait from "@/assets/alex-portrait.png.asset.json";
-import HeroImg from "@/assets/heropg.png"
-import AnimatedText from "../animatedText";
-import { FloatingPathsBackground } from "@/components/floating-paths";
+import TechText from '../TechText';
+import ProfileCard from "../ProfileCard";
+
 
 export function Hero() {
   return (
-    <section id="home" className="px-3 sm:px-4 pt-20 sm:pt-24 pb-16 md:pb-24 2xl:pt-32">
-      <FloatingPathsBackground position={1} className="relative mx-auto max-w-7xl overflow-hidden rounded-3xl bg-secondary/60 border border-border">
-        {/* Portrait */}
-        <div className="relative flex items-end justify-center min-h-[340px] sm:min-h-[460px] md:min-h-[600px] 2xl:min-h-[720px] opacity-0 animate-[hero-portrait_0.9s_ease-out_0.2s_forwards]">
-          <img
-            src={HeroImg}
-            alt="Portrait of DEVANSH DHAWADE"
-            className="h-[300px] sm:h-[420px] md:h-[560px] 2xl:h-[680px] w-auto max-w-full object-contain drop-shadow-2xl"
-          />
-        </div>
+    <section id="home" className="px-3 sm:px-4 pt-8 pb-16 md:pb-24">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 w-full">
+        {/* Left Side: Animated Texts */}
+        <div className="flex flex-col w-full lg:w-1/2 gap-4 md:gap-6 h-[300px] sm:h-[400px] lg:h-[600px] justify-center">
+          <div className="w-full h-1/3 relative">
+            <TechText
+              text="Building"
+        fontWeight={600}
+        fontSize={150}
+        reveal="letter"
+        dashLength={4}
+        dashGap={2}
+        specks={15}
+        fontFamily=""
+        color="#ffffff"
+        accentColor="#ffffff"
+        letterSpacing={-0.05}
+        reach={200}
+        softness={0.7}
+        strokeWidth={1.5}
+        speed={1}
+        lineStyle="dashed"
+        selection
+        labels
+        draggable
+              sweep
+            />
+          </div>
 
-        {/* Bottom overlay content */}
-        <div className="absolute inset-x-0 bottom-0 z-10 px-4 sm:px-6 md:px-10 2xl:px-16 pb-6 sm:pb-8 md:pb-10 2xl:pb-16 animate-fade-in">
-          <div className="flex items-end justify-between gap-4 sm:gap-6">
-            <div className="min-w-0">
-              <p className="text-xs md:text-sm 2xl:text-base text-foreground/70 mb-2 md:mb-4">(20)</p>
-              <AnimatedText text="DEVANSH" className="font-display font-semibold leading-[0.85] tracking-tight text-foreground text-[11vw] sm:text-[9vw] md:text-[5.5rem] lg:text-[7rem] 2xl:text-[8.5rem]" animationType="letters" staggerDelay={0.08} duration={0.6}/>
-              <AnimatedText text="DHAWADE" className="font-display font-semibold leading-[0.85] tracking-tight text-foreground text-[11vw] sm:text-[9vw] md:text-[5.5rem] lg:text-[7rem] 2xl:text-[8.5rem]" animationType="letters" staggerDelay={0.08} duration={0.6}/>
-            </div>
-            <div className="hidden sm:block text-right shrink-0 pb-4 2xl:pb-8">
-              <p className="text-xs md:text-sm 2xl:text-lg text-foreground/80 leading-tight">Full-Stack Web Developer</p>
-              <p className="text-xs md:text-sm 2xl:text-lg text-foreground/80 leading-tight">& Automation Engineer</p>
-            </div>
+          <div className="w-full h-1/3 relative">
+            <TechText
+              text="Streamlining"
+        fontWeight={600}
+        fontSize={150}
+        reveal="letter"
+        dashLength={4}
+        dashGap={2}
+        specks={15}
+        fontFamily=""
+        color="#ffffff"
+        accentColor="#ffffff"
+        letterSpacing={-0.05}
+        reach={200}
+        softness={0.7}
+        strokeWidth={1.5}
+        speed={1}
+        lineStyle="dashed"
+        selection
+        labels
+        draggable
+              sweep
+            />
+          </div>
+
+          <div className="w-full h-1/3 relative">
+            <TechText
+              text="Bridging"
+        fontWeight={600}
+        fontSize={150}
+        reveal="letter"
+        dashLength={4}
+        dashGap={2}
+        specks={15}
+        fontFamily=""
+        color="#ffffff"
+        accentColor="#ffffff"
+        letterSpacing={-0.05}
+        reach={200}
+        softness={0.7}
+        strokeWidth={1.5}
+        speed={1}
+        lineStyle="dashed"
+        selection
+        labels
+        draggable
+              sweep
+            />
           </div>
         </div>
-      </FloatingPathsBackground>
+
+        {/* Right Side: Profile Card */}
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end z-20 scale-75 md:scale-90 lg:scale-100">
+          <ProfileCard />
+        </div>
+      </div>
     </section>
   );
 }
