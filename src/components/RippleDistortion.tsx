@@ -219,7 +219,7 @@ const hexToRGB = (hex: string): [number, number, number] => {
 };
 
 const RippleDistortion = ({
-  src = 'https://images.unsplash.com/photo-1782977389500-dd7adad33ebe?q=80&w=3416&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  src = '',
   brushSize = 150,
   strength = 0.2,
   swirl = 1,
@@ -285,7 +285,7 @@ const RippleDistortion = ({
       imageTexture.image = image;
       compositeUniforms.uTextureSize.value = [image.naturalWidth || 1, image.naturalHeight || 1];
     };
-    image.src = src;
+    if (src) image.src = src;
 
     const offsets = new Float32Array(MAX_WAVES * 2);
     const scales = new Float32Array(MAX_WAVES * 2);

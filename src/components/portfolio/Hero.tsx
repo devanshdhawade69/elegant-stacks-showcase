@@ -1,8 +1,24 @@
+import { useState, useEffect } from 'react';
 import TechText from '../TechText';
 import ProfileCard from "../ProfileCard";
 
+function useTheme() {
+  const [isDark, setIsDark] = useState(false);
+  useEffect(() => {
+    setIsDark(document.documentElement.classList.contains("dark"));
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
+  return isDark;
+}
 
 export function Hero() {
+  const isDark = useTheme();
+  const techColor = isDark ? "#ffffff" : "#000000";
+
   return (
     <section id="home" className="px-3 sm:px-4 pt-8 pb-16 md:pb-24">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 w-full">
@@ -18,8 +34,8 @@ export function Hero() {
               dashGap={2}
               specks={15}
               fontFamily=""
-              color="#ffffff"
-              accentColor="#ffffff"
+              color={techColor}
+              accentColor={techColor}
               letterSpacing={-0.05}
               reach={200}
               softness={0.7}
@@ -44,8 +60,8 @@ export function Hero() {
               dashGap={2}
               specks={15}
               fontFamily=""
-              color="#ffffff"
-              accentColor="#ffffff"
+              color={techColor}
+              accentColor={techColor}
               letterSpacing={-0.05}
               reach={200}
               softness={0.7}
@@ -70,8 +86,8 @@ export function Hero() {
               dashGap={2}
               specks={15}
               fontFamily=""
-              color="#ffffff"
-              accentColor="#ffffff"
+              color={techColor}
+              accentColor={techColor}
               letterSpacing={-0.05}
               reach={200}
               softness={0.7}

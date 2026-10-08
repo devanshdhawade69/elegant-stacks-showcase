@@ -24,17 +24,18 @@ export function Skills() {
   return (
     <section id="skills" className="mx-auto max-w-7xl px-4 sm:px-6 py-20 md:py-32 2xl:py-48">
       <div className="mb-10 md:mb-14 2xl:mb-20">
-        <p className="text-sm 2xl:text-base uppercase tracking-[0.25em] text-foreground/60 mb-3 2xl:mb-5">
-          Tools & Skills
-        </p>
-        <AnimatedText text="The stack I reach for." className="font-display text-3xl sm:text-4xl md:text-5xl 2xl:text-7xl font-semibold max-w-xl 2xl:max-w-3xl" animationType="letters" staggerDelay={0.08} duration={0.8}/>
+        <AnimatedText
+          text="TECH STACK I reach for"
+          className="font-display text-3xl sm:text-4xl md:text-5xl 2xl:text-7xl font-semibold whitespace-nowrap"
+          animationType="letters"
+          staggerDelay={0.08}
+          duration={0.8}
+        />
       </div>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 2xl:gap-12">
         {groups.map(({ icon: Icon, title, skills }) => (
           <TiltEffect key={title}>
-            <div
-              className="rounded-3xl border border-border p-7 bg-foreground/[0.02] h-full"
-            >
+            <div className="rounded-3xl border border-border p-7 bg-foreground/[0.02] h-full">
               <div className="flex items-center gap-3 2xl:gap-5 mb-6 2xl:mb-10">
                 <span className="inline-flex h-9 w-9 2xl:h-14 2xl:w-14 items-center justify-center rounded-full bg-foreground/10">
                   <Icon className="h-4 w-4 2xl:h-6 2xl:w-6" />
