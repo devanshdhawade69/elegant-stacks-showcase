@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -34,7 +35,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -116,13 +117,35 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+import GlowCursor from "../components/GlowCursor";
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <GlowCursor
+        color="#10B981"
+        secondaryColor="#8b5cf6"
+        trailLength={40}
+        trailWidth={8}
+        trailTaper={0.8}
+        followSpeed={0.16}
+        glowIntensity={1.9}
+        glowSpread={1.2}
+        hotspot={0.65}
+        brightness={1.25}
+        opacity={1}
+        pulseSpeed={1.1}
+        noiseStrength={0.035}
+        idleFade
+        idleTimeout={700}
+        fadeDuration={900}
+        blendMode="screen"
+      >
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </GlowCursor>
     </QueryClientProvider>
   );
 }

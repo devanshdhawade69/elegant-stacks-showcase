@@ -35,7 +35,7 @@ const projects: Project[] = [
     problem: "SaaS teams drowning in disconnected dashboards with no single source of truth.",
     stack: ["Next.js", "tRPC", "Postgres", "ClickHouse"],
     impact: "Cut reporting time by 74% across 40+ customer accounts in the first quarter.",
-    color: "#f0eee9",
+    color: "#f2efe8",
   },
   {
     name: "Marée Storefront",
@@ -44,7 +44,7 @@ const projects: Project[] = [
     problem: "Boutique merchants needed a fast, themable storefront without Shopify lock-in.",
     stack: ["Remix", "Stripe", "Sanity"],
     impact: "Lifted conversion 3.2× and shipped 12 brand sites on the same engine.",
-    color: "#e8f2ec",
+    color: "#f2efe8",
   },
   {
     name: "Salon Realtime",
@@ -53,7 +53,7 @@ const projects: Project[] = [
     problem: "Distributed agencies needed durable group chat with searchable history.",
     stack: ["Node", "Fastify", "Redis", "Postgres"],
     impact: "Sustains 12k concurrent sockets per region with p99 < 80ms.",
-    color: "#ece8f2",
+    color: "#f2efe8",
   },
   {
     name: "Forge CLI",
@@ -62,7 +62,7 @@ const projects: Project[] = [
     problem: "Internal teams kept rewriting the same scaffolding scripts every quarter.",
     stack: ["TypeScript", "Bun", "Turbo"],
     impact: "Adopted by 9 squads — onboarding a new repo dropped from 2 days to 20 minutes.",
-    color: "#f2e8e8",
+    color: "#f2efe8",
   },
   {
     name: "Echo Forms",
@@ -71,7 +71,7 @@ const projects: Project[] = [
     problem: "Marketing teams struggled to embed dynamic, high-converting forms on edge networks.",
     stack: ["React", "Tailwind", "Cloudflare Workers"],
     impact: "Increased form completion rates by 42% across 2.5M monthly visits.",
-    color: "#e8ecf2",
+    color: "#f2efe8",
   },
   {
     name: "Nexus Flow",
@@ -142,14 +142,10 @@ export function Projects() {
     <section id="projects" className="mx-auto max-w-7xl px-4 sm:px-6 py-20 md:py-32 2xl:py-48">
       <div className="flex items-end justify-between flex-wrap gap-6 mb-10 md:mb-12 2xl:mb-20">
         <div className="min-w-0">
-          <p className="text-sm 2xl:text-base uppercase tracking-[0.25em] text-foreground/60 mb-3 2xl:mb-5">
-            Selected work
-          </p>
-          <AnimatedText text="Projects shipped end-to-end." className="font-display text-3xl sm:text-4xl md:text-5xl 2xl:text-7xl font-semibold max-w-xl 2xl:max-w-3xl" animationType="letters" staggerDelay={0.08} duration={0.6}/>
+          
+          <AnimatedText text="Projects shipped end-to-end." className="font-display text-3xl sm:text-4xl md:text-5xl 2xl:text-7xl font-semibold max-w-3xl 2xl:max-w-5xl" animationType="letters" staggerDelay={0.08} duration={0.6}/>
         </div>
-        <p className="text-foreground/70 max-w-sm 2xl:max-w-xl 2xl:text-lg">
-          A few recent products — the brief, the stack, and the measurable outcome.
-        </p>
+        
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         {projects.map((p) => (

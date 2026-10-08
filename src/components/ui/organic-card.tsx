@@ -195,7 +195,7 @@ export function OrganicCardTitle({
   )
 }
 
-export type OrganicCardDescriptionProps = ComponentPropsWithoutRef<"p">
+export type OrganicCardDescriptionProps = ComponentPropsWithoutRef<"div">
 
 export function OrganicCardDescription({
   className,
@@ -203,7 +203,7 @@ export function OrganicCardDescription({
   ...props
 }: OrganicCardDescriptionProps) {
   return (
-    <p
+    <div
       {...props}
       className={cn(
         "animate-fade-in-up text-pretty text-base text-muted-foreground leading-relaxed opacity-0 lg:text-lg",

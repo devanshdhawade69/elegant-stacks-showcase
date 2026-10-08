@@ -8,7 +8,6 @@ import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
-import { MouseTrail } from "@/components/mouseTrail";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -37,17 +36,13 @@ function Index() {
       <main>
         <Hero />
         <About />
-        <Projects />
         <Skills />
+        <Projects />
         <Contact />
       </main>
       <Footer />
       <Toaster />
-      <MouseTrail dotColor="white"
-      dotSize={7}
-      spacing={10}
-      trailLength={20}
-      fadeDuration={500} />
+      
     </div>
   );
 }
